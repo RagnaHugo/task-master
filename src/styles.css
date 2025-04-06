@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 
 *,*::before,*::after{
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
-    outline:1px solid black;
+  
 }
 :root{
     --background:rgb(253, 253, 253);
@@ -12,7 +14,11 @@
     --nav-color: rgb(235, 243, 238);
 
 }
+i.icon{
+  font-size: 20px;
+  color:var(--secondary-color);
 
+}
 img{
     width: 50px;
     height: 50px;
@@ -21,19 +27,23 @@ img{
 }
 
 body{
+    font-family: "Outfit", sans-serif;
     display: grid;
-    grid-template-columns: minmax(200px,1fr) 4fr;
+    grid-template-columns: minmax(300px,1fr) 4fr;
     height: 100vh;
  
 }
 
 
 nav{
+    color:var(--secondary-color);
     background-color: var(--nav-color);
     display: flex;
     flex-direction: column;
     padding-left: 16px;
     padding-top: 16px;
+    padding-right: 5px;
+    
     
 }
 
@@ -42,10 +52,83 @@ main{
 }
 
 
+/*menu*/
+
+.profile{
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap:16px
+}
+
+
+
+.logo{
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+}
+
+.logo-master{
+    color: rgb(179, 203, 214);
+}
+
+.item-menu{
+
+    display: flex;
+    padding: 8px;
+    gap: 8px;
+    border-radius: 10px;
+    
+}
+
+.item-menu p:last-child{
+    flex: 1;
+    text-align: end;
+    opacity: 0.6;
+}
+
+.item-menu:nth-child(3) {
+    margin-top: 16px;
+}
 
 
 
 
+.item-menu:hover{
+    background-color: rgba(87, 97, 91, 0.274);
+    cursor: pointer;
+}
+
+.text-project{
+    display: flex;
+    justify-content: space-between;
+    height: 20px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    margin-right: 5px;
+   
+
+}
+
+
+.text-project >i{
+
+   font-size: 20px;
+   cursor: pointer;
+   
+   
+}
+
+
+.text-project >i:hover{
+
+    font-size: 25px;
+    
+    
+ }
+
+
+/*HEADER AND MAIN CONTENT*/
 
 
 
