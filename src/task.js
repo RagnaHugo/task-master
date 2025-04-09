@@ -12,6 +12,9 @@ class Task{
         this._isFinished=false;
     }
 
+
+
+   
     set isFinished(value){
         this._isFinished=value;
     }

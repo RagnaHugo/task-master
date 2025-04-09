@@ -5,6 +5,7 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+   
   
 }
 :root{
@@ -12,6 +13,10 @@
     --primary-color:rgb(0, 138, 138);
     --secondary-color:rgb(0, 92, 121);
     --nav-color: rgb(235, 243, 238);
+    --high:rgb(155, 5, 5);
+    --medium:rgb(0,0,0);
+    --low:rgb(0,0,0);
+
 
 }
 i.icon{
@@ -29,8 +34,8 @@ img{
 body{
     font-family: "Outfit", sans-serif;
     display: grid;
-    grid-template-columns: minmax(300px,1fr) 4fr;
-    height: 100vh;
+    grid-template-columns: minmax(200px,1fr) 4fr;
+    min-height: 100vh;
  
 }
 
@@ -46,6 +51,24 @@ nav{
     
     
 }
+
+
+@media(max-width:768px){
+
+    nav{
+        display: none;
+    }
+    body{
+        
+        grid-template-columns: 1fr;
+        
+     
+    }
+   
+}
+
+
+
 
 main{
     background-color: var(--background);
@@ -115,6 +138,8 @@ main{
 
    font-size: 20px;
    cursor: pointer;
+   transition: scale 0.15s ease;
+   
    
    
 }
@@ -122,7 +147,7 @@ main{
 
 .text-project >i:hover{
 
-    font-size: 25px;
+    scale:1.2;
     
     
  }
@@ -130,9 +155,134 @@ main{
 
 /*HEADER AND MAIN CONTENT*/
 
+main{
+    padding: 32px;
+   background: radial-gradient(ellipse at center, #FFFFFF 0%, #FFFFFF 53%,var(--nav-color) , 100%);
+}
+
+main>header{
+   display: flex;
+   justify-content: space-between;
+   margin-bottom:32px ;
+   opacity: 0.6;
+   
+}
 
 
 
 
+.bar-task{
+
+    margin-top: 16px;
+    list-style: none;
+    background: #ffffff;
+    height: 60px;
+    border-bottom: 1px solid rgb(189, 188, 188);
+    transition: transform 0.1s ease-in,
+                border-color 0.1s ease-in;
+    display: flex;
+    justify-content: space-between;
+    
+
+}
+
+.info-task{
+
+}
+
+
+input[type="checkbox"]{
+
+   
+
+}
+
+.info-task p{
+    width: 30em; 
+    text-overflow: ellipsis;    
+    padding: 5px;
+   
+  
+}
+
+
+.bar-task .icons-task{
+    display: none;
+    gap: 16px;
+    font-size:1.1rem;
+    color:var(--secondary-color);
+    
+}
+
+.icons-task>i{
+    cursor:pointer;
+}
+
+.bar-task:hover .icons-task{
+    display: flex;
+    opacity: 0.7;
+    
+}
+
+.bar-task:hover .icons-task:hover{
+   
+    opacity: 1;
+    
+}
+
+
+.bar-task:hover{
+
+    
+    list-style: none;
+    transform: scale(1.01);
+    border-color: var(--high);
+    
+   
+    
+}
+
+
+details summary::-webkit-details-marker {
+    display: none;
+  }
+
+
+  .content-details{
+    display: grid;
+    grid-template-columns: 200px 1fr ;
+    font-size: 15px;
+    padding: 16px;
+    background-color: rgb(255, 247, 247);
+    align-items: center;
+    row-gap: 16px;
+   
+   
+  }
+
+  .content-details i{
+  
+    color: rgb(206, 102, 102);
+    margin-left: 4px;
+  }
+
+  details:open .bar-task {
+    
+    transform: scale(1.01);
+    border-color: var(--high);
+   
+  }
+
+  .content-details span:nth-child(odd){
+
+    font-weight: bold;
+    color: rgb(56, 56, 56);
+  }
+
+
+
+
+  
+  
 
 
