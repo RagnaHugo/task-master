@@ -1,11 +1,17 @@
+
 import "./styles.css"
 import Task,{Project} from "./task"
 import {format,compareAsc} from "date-fns"
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
+const modal= document.querySelector("#modal");
 
 
+document.querySelector(".addTask").addEventListener("click",()=>{
+    modal.showModal();
+    console.log("hola mundo");
+});
 
 
 

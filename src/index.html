@@ -57,11 +57,6 @@
      
 
 
-        <div class="item-menu">
-            <i class="fa-solid fa-calendar-days icon"></i>
-            <p>upcomming</p>
-            <p>1</p>
-        </div>
 
         <div class="text-project">
             <h4>My projects</h4>
@@ -96,11 +91,12 @@
                 <summary class="bar-task">
 
                     <div class="info-task">
-                        <p>Preparar presentación mensual presentación mensual  </p>
-                        <small>2025-04-12</small>
+                        <input type="checkbox">
+                        <span>Preparar presentación mensual presentación mensual </span></span>
+                        <p>2025-04-12</p>
                        
                     </div>
-                    <input type="checkbox">                  
+                                   
                    
 
                     <div class="icons-task">
@@ -112,7 +108,7 @@
                 </summary>
 
                 <div class="content-details">
-                    <span>Descripción:</span>
+                    <span c>Descripción:</span>
                     <span>Crear diapositivas para la reunión de resultados del equipo.</span>
                     <span>Prioridad: </span>
                     <span>alta<i class="fa-solid fa-flag"></i> </span>
@@ -126,8 +122,10 @@
                 <summary class="bar-task">
 
                     <div class="info-task">
-                        <p>Preparar presentación mensual</p>
-                        <small>2025-04-12</small>
+                        <input type="checkbox">
+                        <span>Preparar presentación mensual presentación mensual </span>
+                        
+                        <p>2025-04-12</p>
                     </div>
                   
 
@@ -143,16 +141,49 @@
                     <span>Descripción :</span>
                     <span>Crear diapositivas para la reunión de resultados del equipo.</span>
                     <span>Prioridad : </span>
-                    <span>alta<i class="fa-solid fa-flag"></i> </span>
+                    <span>high<i class="fa-solid fa-flag"></i> </span>
                     <span>Notes :</span>
                     <span>Incluir gráficos de desempeño y proyecciones.</span>
                 </div>
                 
             </details>
+
+            <div class="addTask" id="add">
+                <i class="fa-solid fa-plus"></i> <span>add task</span>
+
+            </div>
            
 
         </section>
     </main>
+
+    <dialog id="modal">
+        <h2>Add Task for my project</h2>        
+        <form action="">
+            <label for="title" >Title:</label>
+            <input name="title"type="text">
+            <label >Description:</label>
+            <input type="text">
+            <label >Due Date</label>
+            <input type="date">
+            <label >Priority:</label>
+            <select>
+                <option value="">High</option>
+                <option value="">Medium</option>
+                <option value="">Low</option>
+            </select>
+            <label >Project:</label>
+            <select>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+            </select>
+            <button>add task</button>   
+            <button>cancel</button>           
+
+        </form>
+   
+    </dialog>
     
 
 </body>

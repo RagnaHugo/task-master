@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 
+  
 *,*::before,*::after{
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+  
    
   
 }
@@ -188,29 +190,44 @@ main>header{
 
 .info-task{
 
-}
-
-
-input[type="checkbox"]{
-
-   
-
-}
-
-.info-task p{
-    width: 30em; 
-    text-overflow: ellipsis;    
-    padding: 5px;
-   
   
+    display: grid;
+    grid-template-columns: auto 1fr ;
+    grid-template-rows: 1fr 1fr ;
+    width: 100%;
+    column-gap: 8px;
+    
+    
+    
+
 }
+
+.info-task>span{
+   align-self: flex-end;
+    
+}
+
+
+.info-task input{
+   
+    grid-row: 1/3;
+    width: 16px;
+    accent-color: var(--secondary-color);
+    opacity: 0.8;
+    
+}
+
+
+
 
 
 .bar-task .icons-task{
-    display: none;
+    display: flex;
+    visibility: hidden;
     gap: 16px;
     font-size:1.1rem;
     color:var(--secondary-color);
+    padding-top: 10px;
     
 }
 
@@ -219,7 +236,7 @@ input[type="checkbox"]{
 }
 
 .bar-task:hover .icons-task{
-    display: flex;
+    visibility: visible;
     opacity: 0.7;
     
 }
@@ -280,9 +297,117 @@ details summary::-webkit-details-marker {
   }
 
 
+/*boton de añadir*/
+
+.addTask{
+  
+    color: var(--secondary-color);
+    margin-top: 16px;
+    width: 100px;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+  
+}
+
+.addTask span{
+    display: inline-block;
+}
+
+.addTask:hover{
+
+    transform: scale(1.01);
+    color: rgb(0, 121, 158);
+    
+
+}
 
 
+  /*modal*/
+
+  dialog::backdrop{
+    backdrop-filter: blur(0.5px);
+    background-color: rgba(0, 0, 0, 0.11);
+  }
+
+  dialog{
+
   
+    border: none;
+    border-radius: 0.2em;
+    width: 30rem;
+    margin: 4em auto;
+    padding: 0.5rem;
+    overflow: hidden;
+    background-color:var(--nav-color);
+    opacity: 0.95;
+    box-shadow: 0px 0px 16px  -8px var(--secondary-color);
+    
+}
+
+
+form{
+    display: grid;
+    padding: 1rem 2rem;
+    grid-template-columns: auto 1fr;
+    gap: 15px;
+    color: #525252;
   
+    
+}
+
+form button{
+
+    font-family: inherit;
+    font-size: 15px;
+    padding: 0.5em;
+    
+    border: none;
+    border-radius: 8px;
+    background-color: var(--secondary-color);
+    color: var(--nav-color);
+    margin-top: 16px;
+    opacity: 0.8;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px  -1px rgb(48, 48, 48);
+    transition: transform 0.2s ease-in-out;
+}
+form button:hover{
+    transform: scale(1.02);
+}
+
+form input{
+    font-family: inherit;
+    padding: 4px;
+    border: none;
+    border-radius: 4px;
+
+    background-color: rgb(255, 255, 255);
+}
+
+form select{
+    border: none;
+    font-family: inherit;
+    padding: 4px;
+    border-radius: 4px;
+    
+}
+
+form label>{
+    background-color: rgb(134, 35, 35);
+}
+
+form input:focus, form select:focus,form select:active{
+    outline: 1px solid rgb(0, 95, 95);
+}
+
+form label{
+
+    font-weight: bold;
+}
+
+dialog h2{
+    padding: 8px 16px;
+}
+
 
 
