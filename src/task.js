@@ -5,11 +5,13 @@ class Task{
     constructor(title,description,dueDate,priority,notes){
         this._title=title;
         this._description=description;
-        this._dueDate=format(dueDate,"MMMM dd, yyyy");
+        this._dueDate=format(dueDate,"MMMM dd, yyyy ");
         this._priority=priority;
         this._notes=notes;
         this._checklist=[];
         this._isFinished=false;
+        this.id = new Date();
+        this.details=document.createElement("details");
     }
 
 
@@ -68,10 +70,12 @@ class Task{
 
 
     get dueDate(){
+       
         return this._dueDate;
     }
 
     set dueDate(value){
+        format(value,"MMMM dd, yyyy")
         this._dueDate=value;
     }
 
@@ -87,6 +91,58 @@ class Task{
     }
 
 
+    bar_task(){
+        
+
+
+    this.details.innerHTML="";
+    const  summary= document.createElement("summary");
+    summary.setAttribute("class","bar-task")
+    const info_task= document.createElement("div");
+    info_task.setAttribute("class","info-task");
+    const check_type= document.createElement("input");
+    check_type.setAttribute("type","checkbox");
+    const span_title= document.createElement("span");
+    span_title.className="title-span"
+    span_title.textContent=this.title;
+    const p_fecha= document.createElement("p");
+    p_fecha.textContent=this.dueDate;
+
+    const div_iconos= document.createElement("div");
+    div_iconos.setAttribute("class","icons-task");
+    div_iconos.innerHTML=` <i class="fa-regular fa-pen-to-square edit"></i>
+                        <i class="fa-solid fa-trash remove"></i>`;
+
+
+    
+    
+                     
+    summary.appendChild(info_task);
+    summary.appendChild(div_iconos);
+    info_task.appendChild(check_type);
+    info_task.appendChild(span_title);
+    info_task.appendChild(p_fecha);
+
+
+
+    // const content_details = document.createElement("div");
+    // div_iconos.setAttribute("class","content-details");
+    // const span_description_title = document.createElement("span"); 
+    // const span_description = document.createElement("span"); 
+    // const span_priority_title = document.createElement("span"); 
+    // const span_priority = document.createElement("span"); 
+    // span_priority.textContent=this.priority
+    
+
+
+
+
+    this.details.appendChild(summary);
+    
+     return this.details;
+    }
+
+
 
 }
 
@@ -95,8 +151,10 @@ class Task{
 
 class Project{
 
-    constructor(){
+    constructor(title){
+        this._title=title;
         this._tasks=[];
+        this.div_tareas= document.createElement("div");
     }
 
 
@@ -108,9 +166,13 @@ class Project{
         this._tasks.push(task);
     }
 
-    removeTask(title){
-        const id = this._tasks.findIndex(u=>u.title==title);
-        this._tasks.splice(id,1);
+    removeTask(num_id){
+        
+        let id_remove = this._tasks.findIndex(u=>u.id==num_id);
+        if(id_remove!=-1){
+            this._tasks.splice(id_remove,1);
+        }
+      
     }
 
     findTask(title){
@@ -125,6 +187,73 @@ class Project{
                return e.isFinished==true;
         });
         
+    }
+
+    get title(){
+        return this._title;
+    }
+
+
+    showTasks(container){
+
+
+        
+        container.innerHTML="";
+        
+
+        this._tasks.forEach((task)=>{
+
+            
+         const task_actual = task.bar_task();
+
+         task_actual.addEventListener("click",(e)=>{
+
+            e.stopPropagation(); 
+            
+            
+            if(e.target.closest(".remove")){
+                this.removeTask(task.id);
+                this.showTasks(container);
+                 console.log("SE BORRA");
+            
+               
+                
+            }
+
+            
+
+        });
+            
+       
+        container.appendChild(task_actual);
+
+        });
+
+       
+
+    }
+
+
+
+    bar_project(){
+        const item_project= document.createElement("div");
+        const i= document.createElement("i");
+        item_project.setAttribute("class","item-menu");
+        i.setAttribute("class","fa-solid fa-hashtag icon");
+        const p= document.createElement("p");
+        p.textContent=this.title;
+        const p_tareas =   document.createElement("p");
+        p_tareas.textContent= this.tasks.length;
+
+
+        item_project.appendChild(i);
+        item_project.appendChild(p);
+        item_project.appendChild(p_tareas);
+                    
+
+
+
+        return item_project;
     }
 
 

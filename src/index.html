@@ -19,29 +19,29 @@
             <p>Usuario</p>
         </div>
 
-        <div class="item-menu">
+        <div class="item-menu lupa">
             <i class="fa-solid fa-magnifying-glass icon"></i>
             <p>Search </p>
-            <p>1</p>
+            <p></p>
         </div>
 
         <div class="item-menu">
             <i class="fa-solid fa-inbox icon"></i>
             <p>inbox</p>
-            <p>1</p>
+            <p></p>
         </div>
 
         <div class="item-menu">
             <i class="fa-solid fa-calendar-day icon"></i>
             <p>today</p>
-            <p>1</p>
+            <p class="today-info"></p>
         </div>
 
 
         <div class="item-menu">
             <i class="fa-solid fa-calendar-days icon"></i>
             <p>Upcoming Tasks </p>
-            <p>1</p>
+            <p class="Upcoming-info"></p>
         </div>
        
 
@@ -50,32 +50,46 @@
         <div class="item-menu">
             <i class="fa-solid fa-circle-check icon" ></i>
             <p>Completed Tasks</p>
-            <p>1</p>
+            <p class="completed-info"></p>
         </div>
-
-
-     
-
-
 
         <div class="text-project">
             <h4>My projects</h4>
-            <i class="fa-solid fa-plus"></i>
+            <i class="fa-solid fa-plus" id="add_project">
+             <div class="window-project">
+                <p>New Project</p>
+                <input class="name_project" type="text">
+                <button class="add_project_button">confirm</button>
+             </div>   
+            </i>
            
         </div>
         
        
 
-        <div class="item-menu">
+        <div class="area_proyectos"></div>
+
+            
+        <!-- <div class="item-menu">
             <i class="fa-solid fa-hashtag icon"></i>
             <p>Project home</p>
             <p>1</p>
         </div>
 
         
+        <div class="item-menu">
+            <i class="fa-solid fa-hashtag icon"></i>
+            <p>Project home</p>
+            <p>1</p>
+        </div>
+
+         -->
+
        
 
     </nav>
+
+    
     <main>
         <header>
             <p class="ruta" >My proyects/</p>
@@ -84,15 +98,19 @@
         </header>
         <section>
             <header>
-                <h1>Project home</h1>
+                <h1 class="title_project"></h1>
             </header>
+
+            <div class="pre_tasks">
+
+            </div>
             
-            <details>
+             <!-- <details>
                 <summary class="bar-task">
 
                     <div class="info-task">
                         <input type="checkbox">
-                        <span>Preparar presentación mensual presentación mensual </span></span>
+                        <span class="title-span" >Preparar presentación mensual presentación mensual </span></span>
                         <p>2025-04-12</p>
                        
                     </div>
@@ -100,8 +118,8 @@
                    
 
                     <div class="icons-task">
-                        <i class="fa-regular fa-pen-to-square"></i>
-                        <i class="fa-solid fa-trash"></i>
+                        <i class="fa-regular fa-pen-to-square edit"></i>
+                        <i class="fa-solid fa-trash remove"></i>
                     </div>
                    
 
@@ -116,9 +134,9 @@
                     <span>Incluir gráficos de desempeño y proyecciones.</span>
                 </div>
                 
-            </details>
+            </details>  -->
 
-            <details>
+            <!-- <details>
                 <summary class="bar-task">
 
                     <div class="info-task">
@@ -138,7 +156,7 @@
                 </summary>
                 
                 <div class="content-details">
-                    <span>Descripción :</span>
+                    <span>Description :</span>
                     <span>Crear diapositivas para la reunión de resultados del equipo.</span>
                     <span>Prioridad : </span>
                     <span>high<i class="fa-solid fa-flag"></i> </span>
@@ -146,7 +164,7 @@
                     <span>Incluir gráficos de desempeño y proyecciones.</span>
                 </div>
                 
-            </details>
+            </details> -->
 
             <div class="addTask" id="add">
                 <i class="fa-solid fa-plus"></i> <span>add task</span>
@@ -161,25 +179,26 @@
         <h2>Add Task for my project</h2>        
         <form action="">
             <label for="title" >Title:</label>
-            <input name="title"type="text">
+            <input class="titulo" name="title"type="text">
             <label >Description:</label>
-            <input type="text">
+            <input class="description" type="text">
             <label >Due Date</label>
-            <input type="date">
+            <input class="date" type="date">
             <label >Priority:</label>
-            <select>
-                <option value="">High</option>
-                <option value="">Medium</option>
-                <option value="">Low</option>
+            <select class="priority">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
             </select>
             <label >Project:</label>
-            <select>
+            <select class="project">
                 <option value=""></option>
                 <option value=""></option>
                 <option value=""></option>
             </select>
-            <button>add task</button>   
-            <button>cancel</button>           
+            
+            <button class="cancel">cancel</button>    
+            <button class="aceptar">add task</button>          
 
         </form>
    

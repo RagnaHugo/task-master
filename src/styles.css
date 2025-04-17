@@ -18,6 +18,9 @@
     --high:rgb(155, 5, 5);
     --medium:rgb(0,0,0);
     --low:rgb(0,0,0);
+    --color-info-high:rgb(252, 230, 230);
+    --color-info-medium:rgb(216, 216, 255);
+    --color-info-low:rgb(247, 255, 223);
 
 
 }
@@ -103,6 +106,7 @@ main{
     padding: 8px;
     gap: 8px;
     border-radius: 10px;
+    margin: 0;
     
 }
 
@@ -112,7 +116,7 @@ main{
     opacity: 0.6;
 }
 
-.item-menu:nth-child(3) {
+.item-menu.lupa {
     margin-top: 16px;
 }
 
@@ -140,22 +144,23 @@ main{
 
    font-size: 20px;
    cursor: pointer;
-   transition: scale 0.15s ease;
+   transition: scale 0.15s ease-in-out;
    
    
    
 }
 
 
-.text-project >i:hover{
-
-    scale:1.2;
-    
-    
- }
 
 
 /*HEADER AND MAIN CONTENT*/
+
+
+section{
+    display: flex;
+    flex-direction: column;
+}
+
 
 main{
     padding: 32px;
@@ -270,7 +275,7 @@ details summary::-webkit-details-marker {
     grid-template-columns: 200px 1fr ;
     font-size: 15px;
     padding: 16px;
-    background-color: rgb(255, 247, 247);
+    background-color: var(--color-info-high);
     align-items: center;
     row-gap: 16px;
    
@@ -331,7 +336,7 @@ details summary::-webkit-details-marker {
 
   dialog{
 
-  
+    color: var(--secondary-color);
     border: none;
     border-radius: 0.2em;
     width: 30rem;
@@ -350,7 +355,7 @@ form{
     padding: 1rem 2rem;
     grid-template-columns: auto 1fr;
     gap: 15px;
-    color: #525252;
+    color: var(--secondary-color);
   
     
 }
@@ -380,7 +385,7 @@ form input{
     padding: 4px;
     border: none;
     border-radius: 4px;
-
+    
     background-color: rgb(255, 255, 255);
 }
 
@@ -389,6 +394,7 @@ form select{
     font-family: inherit;
     padding: 4px;
     border-radius: 4px;
+    cursor: pointer;
     
 }
 
@@ -410,4 +416,85 @@ dialog h2{
 }
 
 
+form .cancel{
 
+   background-color: #0b5a56;
+}
+
+form .priority option:first-child{
+    background-color: var(--color-info-high);
+   
+}
+
+form .priority option:nth-child(2){
+    background-color: var(--color-info-medium);
+   
+}
+
+form .priority option:nth-child(3){
+    background-color: var(--color-info-low);
+   
+}
+
+
+/*menu de nuevo proyecto*/
+#add_project{
+   
+    position:relative;
+}
+
+.window-project{
+
+ 
+    border: 1px solid var(--secondary-color);
+    display: none;
+    position: absolute;
+    background-color: var(--nav-color);
+    gap: 5px;
+    top:0px;
+    left:1.5rem ;
+    padding: 8px;
+    z-index: 1000;
+
+
+}
+
+
+.window-project.active{
+    display: grid;
+}
+
+.window-project input{
+
+    outline: 1px solid var(--secondary-color);
+    border: none;
+    height: 1.3rem;
+    padding: 0.2rem;
+
+}
+
+
+.window-project button{
+    
+    border: none;
+    border-radius: 8px;
+    height: 1.5rem;
+    background-color: var(--secondary-color);
+    color: var(--nav-color);
+    box-shadow: 0px 0px 5px  -1px rgb(48, 48, 48);
+    cursor: pointer;
+    font-family: inherit;
+}
+
+
+
+.text-project >i:hover{
+
+    scale: 1.1;
+    
+    z-index: 1000;
+    
+    
+ }
+
+ 
