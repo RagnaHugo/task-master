@@ -11,7 +11,7 @@ class Task{
         this._checklist=[];
         this._isFinished=false;
         this.id = new Date();
-        this.details=document.createElement("details");
+    
     }
 
 
@@ -95,7 +95,7 @@ class Task{
         
 
 
-    this.details.innerHTML="";
+    const  details=document.createElement("details");
     const  summary= document.createElement("summary");
     summary.setAttribute("class","bar-task")
     const info_task= document.createElement("div");
@@ -137,9 +137,9 @@ class Task{
 
 
 
-    this.details.appendChild(summary);
+    details.appendChild(summary);
     
-     return this.details;
+     return details;
     }
 
 
@@ -169,9 +169,10 @@ class Project{
     removeTask(num_id){
         
         let id_remove = this._tasks.findIndex(u=>u.id==num_id);
-        if(id_remove!=-1){
-            this._tasks.splice(id_remove,1);
-        }
+        this._tasks.splice(id_remove,1);
+        // if(id_remove!=-1){
+        //     this._tasks.splice(id_remove,1);
+        // }
       
     }
 
@@ -204,11 +205,11 @@ class Project{
         this._tasks.forEach((task)=>{
 
             
-         const task_actual = task.bar_task();
+            const task_actual=task.bar_task();
 
-         task_actual.addEventListener("click",(e)=>{
+            task_actual.addEventListener("click",(e)=>{
 
-            e.stopPropagation(); 
+           
             
             
             if(e.target.closest(".remove")){
@@ -225,7 +226,7 @@ class Project{
         });
             
        
-        container.appendChild(task_actual);
+        container.appendChild(  task_actual);
 
         });
 
