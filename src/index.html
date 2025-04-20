@@ -31,23 +31,23 @@
             <p></p>
         </div>
 
-        <div class="item-menu">
+        <div class="item-menu  action-today">
             <i class="fa-solid fa-calendar-day icon"></i>
-            <p>today</p>
+            <p>Today</p>
             <p class="today-info"></p>
         </div>
 
 
-        <div class="item-menu">
+        <div class="item-menu  action-up">
             <i class="fa-solid fa-calendar-days icon"></i>
-            <p>Upcoming Tasks </p>
+            <p>Upcoming Tasks</p>
             <p class="Upcoming-info"></p>
         </div>
        
 
        
 
-        <div class="item-menu">
+        <div class="item-menu action-completed">
             <i class="fa-solid fa-circle-check icon" ></i>
             <p>Completed Tasks</p>
             <p class="completed-info"></p>
@@ -126,7 +126,7 @@
                 </summary>
 
                 <div class="content-details">
-                    <span c>Descripción:</span>
+                    <span>Descripción:</span>
                     <span>Crear diapositivas para la reunión de resultados del equipo.</span>
                     <span>Prioridad: </span>
                     <span>alta<i class="fa-solid fa-flag"></i> </span>
@@ -186,19 +186,47 @@
             <input class="date" type="date">
             <label >Priority:</label>
             <select class="priority">
-                <option value="high">High</option>
-                <option value="medium">Medium</option>
-                <option value="low">Low</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
             </select>
             <label >Project:</label>
             <select class="project">
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
+               
             </select>
+            <label >Notes:</label>
+            <textarea name="textarea" rows="10" cols="50">About task</textarea>
+
             
             <button class="cancel">cancel</button>    
             <button class="aceptar">add task</button>          
+
+        </form>
+   
+    </dialog>
+
+    <dialog id="modal-edit">
+        <h2>Edit Task</h2>        
+        <form action="">
+            <label for="title" >Title:</label>
+            <input class="titulo-edit" name="title"type="text">
+            <label >Description:</label>
+            <input class="description-edit" type="text">
+            <label >Due Date</label>
+            <input class="date-edit" type="date">
+            <label >Priority:</label>
+            <select class="priority-edit">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+         
+            <label >Notes:</label>
+            <textarea class="textarea-edit" rows="10" cols="50">About task</textarea>
+
+            
+            <button class="cancel-edit">cancel</button>    
+            <button class="edit-task">Edit task</button>          
 
         </form>
    

@@ -497,4 +497,14 @@ form .priority option:nth-child(3){
     
  }
 
- 
+ /*Textarea*/
+
+ textarea{
+    font-size: inherit;
+    resize: none;
+    border: none;
+    padding: 0.2rem;
+    outline: none;
+
+ }
+
