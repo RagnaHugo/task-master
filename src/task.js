@@ -144,9 +144,7 @@ class Task{
             div_iconos.innerHTML=` <i class="fa-regular fa-pen-to-square edit"></i>
                                 <i class="fa-solid fa-trash remove"></i>`;
         
-        
-            
-            
+           
                              
             summary.appendChild(info_task);
             summary.appendChild(div_iconos);
@@ -183,7 +181,16 @@ class Task{
             content_details.appendChild(span_notes);
         
             
-        
+             
+            if(this.priority=="Medium"){
+                content_details.style.backgroundColor="rgb(216, 216, 255)";
+            }
+            if(this.priority=="Low"){
+                content_details.style.backgroundColor="rgb(247, 255, 223)";
+            }
+         
+            
+            
         
            
         
